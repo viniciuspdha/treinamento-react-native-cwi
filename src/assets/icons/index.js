@@ -1,0 +1,10 @@
+export { ArrowIcon } from './arrow.icon';
+export { ListIcon } from './list.icon';
+export { NextIcon } from './next.icon';
+export { PauseIcon } from './pause.icon';
+export { PlayIcon } from './play.icon';
+export { PlayFilledIcon } from './play-filled.icon';
+export { PreviousIcon } from './previous.icon';
+export { SearchIcon } from './search.icon'
+export { SoundIcon } from './sound.icon'
+export { SpeakerIcon } from './speaker.icon'
