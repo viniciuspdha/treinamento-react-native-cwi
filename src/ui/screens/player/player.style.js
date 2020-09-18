@@ -16,13 +16,16 @@ export const styles = StyleSheet.create({
   statusBar: {
     width,
     height: 5,
+    backgroundColor: "rgba(63,37,229, 0.15)",
+  },
+  statusProgress: {
+    height: 5,
     backgroundColor: "#3f25e5",
   },
   mediaContainer: {
     flex: 1,
     justifyContent: "space-around",
-    alignItems: "center",
-    paddingHorizontal: 27,
+    paddingBottom: 120,
   },
   textContainer: {
     width,
@@ -39,7 +42,11 @@ export const styles = StyleSheet.create({
     fontSize: 20,
   },
   description: {
+    fontSize: 12,
+  },
+  author: {
     fontSize: 16,
+    marginTop: 5,
   },
   buttonContainer: {
     width,
@@ -71,5 +78,34 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#3f25e5",
+  },
+  soundBarContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    width,
+    paddingHorizontal: 27,
+  },
+  bar: {
+    height: 5,
+    backgroundColor: "rgba(63,37,229, 0.15)",
+    marginLeft: 6,
+    marginRight: 10,
+    flex: 1,
+    borderRadius: 5,
+  },
+  progress: {
+    height: 5,
+    backgroundColor: "rgba(63,37,229, 0.75)",
+    position: "relative",
+    borderRadius: 5,
+  },
+  progressDot: {
+    position: "absolute",
+    backgroundColor: "#3F25E5",
+    borderRadius: 5,
+    width: 10,
+    height: 10,
+    right: 0,
+    top: -2.5,
   },
 });
