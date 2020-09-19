@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import { styles } from "./player.style";
+
+import { useTheme } from "../../../contexts/theme-provider";
+import { Surface } from "../../containers/surface.container";
 
 import {
   PreviousIcon,
@@ -38,6 +41,7 @@ const Info = () => {
 
 const Buttons = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { toggleTheme } = useTheme();
 
   return (
     <View style={styles.buttonContainer}>
@@ -48,6 +52,8 @@ const Buttons = () => {
         style={styles.playContainer}
         onPress={() => {
           setIsPlaying(!isPlaying);
+          //TODO Colocar o toggle theme em um botão de tema
+          toggleTheme();
         }}
       >
         <View style={styles.playButton}>
@@ -79,7 +85,7 @@ const SoundBar = () => {
 
 export const PlayerScreen = () => {
   return (
-    <View style={styles.container}>
+    <Surface style={styles.container}>
       <Image style={styles.videoImage} source={{ uri: imageUri }} />
       <StatusBar />
       <View style={styles.mediaContainer}>
@@ -87,6 +93,6 @@ export const PlayerScreen = () => {
         <Buttons />
         <SoundBar />
       </View>
-    </View>
+    </Surface>
   );
 };

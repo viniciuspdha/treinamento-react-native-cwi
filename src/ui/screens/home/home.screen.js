@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
-import { PlaylistCard } from "../components/playlist-card.component";
+import { PlaylistCard } from "../../components/playlist-card/playlist-card.component";
 
 const data = [
   {
@@ -103,7 +103,6 @@ export const HomeScreen = () => {
         style={{
           flex: 1,
           backgroundColor: "white",
-          paddingTop: 20,
         }}
       >
         <Text
@@ -112,7 +111,7 @@ export const HomeScreen = () => {
             color: "#414141",
             fontSize: 32,
             paddingTop: 30,
-            marginTop: 30,
+            paddingBottom: 10,
             marginStart: 20,
           }}
         >

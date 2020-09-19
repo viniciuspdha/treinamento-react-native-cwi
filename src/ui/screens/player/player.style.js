@@ -5,7 +5,6 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
     alignItems: "center",
     flexDirection: "column",
   },
@@ -25,7 +24,7 @@ export const styles = StyleSheet.create({
   mediaContainer: {
     flex: 1,
     justifyContent: "space-around",
-    paddingBottom: 120,
+    paddingBottom: 100,
   },
   textContainer: {
     width,

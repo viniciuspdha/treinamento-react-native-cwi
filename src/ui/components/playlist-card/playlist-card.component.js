@@ -7,8 +7,9 @@ import {
   Platform,
   TouchableOpacity,
 } from "react-native";
+import { useLinkTo } from "@react-navigation/native";
 
-import { ArrowIcon } from "../../assets/icons/arrow.icon";
+import { ArrowIcon } from "../../../assets/icons/arrow.icon";
 
 const getRandomColor = () => {
   var letters = "0123456789ABCDEF";
@@ -20,6 +21,8 @@ const getRandomColor = () => {
 };
 
 export const PlaylistCard = ({ imageUrl, title, duration, quantity }) => {
+  const linkTo = useLinkTo();
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -33,7 +36,7 @@ export const PlaylistCard = ({ imageUrl, title, duration, quantity }) => {
           <Text style={styles.description}>{quantity} videos</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={() => alert("Pressed!")} style={styles.button}>
+      <TouchableOpacity onPress={() => linkTo("/Player")} style={styles.button}>
         <ArrowIcon />
       </TouchableOpacity>
     </View>
@@ -43,7 +46,6 @@ export const PlaylistCard = ({ imageUrl, title, duration, quantity }) => {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    marginVertical: 20,
     paddingVertical: 20,
     flexDirection: "row",
     alignItems: "center",
