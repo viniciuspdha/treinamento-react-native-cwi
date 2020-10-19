@@ -20,7 +20,13 @@ const getRandomColor = () => {
   return color;
 };
 
-export const PlaylistCard = ({ imageUrl, title, duration, quantity }) => {
+export const PlaylistCard = ({
+  imageUrl,
+  title,
+  duration,
+  quantity,
+  onPress,
+}) => {
   const linkTo = useLinkTo();
 
   return (
@@ -36,7 +42,7 @@ export const PlaylistCard = ({ imageUrl, title, duration, quantity }) => {
           <Text style={styles.description}>{quantity} videos</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={() => linkTo("/Player")} style={styles.button}>
+      <TouchableOpacity onPress={onPress} style={styles.button}>
         <ArrowIcon />
       </TouchableOpacity>
     </View>
