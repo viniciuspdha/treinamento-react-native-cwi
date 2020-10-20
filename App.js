@@ -9,17 +9,17 @@ import { TabNavigation } from "./src/navigation/tab.navigation";
 
 import { ThemeProvider } from "./src/contexts/theme-provider";
 import { store } from "./src/state/store";
+import { CustomStatusBar } from "./src/ui/components/custom-status-bar/custom-status-bar.component";
 
 if (__DEV__) {
   import("./ReactotronConfig");
 }
 
 const App = () => {
-  Reactotron.log("HELLO WORLD");
-
   return (
     <Provider store={store}>
       <ThemeProvider>
+        <CustomStatusBar />
         <SafeAreaView style={{ flex: 1 }}>
           <NavigationContainer>
             <TabNavigation />

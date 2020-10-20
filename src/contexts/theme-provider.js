@@ -17,6 +17,7 @@ const PREFERENCES_KEY = "@preferences";
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(DefaultTheme);
+  const [themeString, setThemeString] = useState("light");
 
   useEffect(() => {
     const restorePreferences = async () => {
@@ -26,6 +27,7 @@ export const ThemeProvider = ({ children }) => {
       const currentTheme =
         preferences.theme === "dark" ? DarkTheme : DefaultTheme;
 
+      setThemeString(preferences.theme);
       setTheme(currentTheme);
     };
 
@@ -44,12 +46,14 @@ export const ThemeProvider = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
+    setThemeString((theme) => (theme === "dark" ? "light" : "dark"));
     setTheme((theme) => (theme === DarkTheme ? DefaultTheme : DarkTheme));
   };
 
   const value = useMemo(
     () => ({
       theme,
+      themeString,
       toggleTheme,
     }),
     [theme]
@@ -69,6 +73,7 @@ export const useTheme = () => {
 
   return {
     theme: ctx.theme,
+    themeString: ctx.themeString,
     toggleTheme: ctx.toggleTheme,
   };
 };

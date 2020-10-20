@@ -9,6 +9,7 @@ import {
   savePlaylists,
   selectPlaylist,
 } from "../../../state/playlist/playlist.actions";
+import { Surface } from "../../containers/surface.container";
 
 export const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -60,12 +61,7 @@ export const HomeScreen = ({ navigation }) => {
 
   const Content = () => {
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "white",
-        }}
-      >
+      <Surface>
         <Text
           style={{
             fontWeight: "bold",
@@ -82,9 +78,9 @@ export const HomeScreen = ({ navigation }) => {
           data={playlists}
           keyExtractor={(item) => item.id.toString()}
           renderItem={renderItem}
-          contentContainerStyle={{ paddingHorizontal: 20 }}
+          contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 60 }}
         />
-      </View>
+      </Surface>
     );
   };
 

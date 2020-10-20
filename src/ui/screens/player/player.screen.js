@@ -1,10 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { View, Image, Text, TouchableOpacity } from "react-native";
-import Reactotron from "reactotron-react-native";
 
 import { styles } from "./player.style";
 
-import { useTheme } from "../../../contexts/theme-provider";
 import { Surface } from "../../containers/surface.container";
 
 import {
@@ -51,7 +49,6 @@ const Info = ({ video }) => {
 
 const Buttons = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const { toggleTheme } = useTheme();
 
   return (
     <View style={styles.buttonContainer}>
@@ -62,8 +59,6 @@ const Buttons = () => {
         style={styles.playContainer}
         onPress={() => {
           setIsPlaying(!isPlaying);
-          //TODO Colocar o toggle theme em um botão de tema
-          toggleTheme();
         }}
       >
         <View style={styles.playButton}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ListIcon, PlayIcon, SearchIcon } from "../../../assets/icons";
+import { ListIcon, PlayIcon, SearchIcon, CogIcon } from "../../../assets/icons";
 
 import styles from "./bottom-tab.style";
 import { View, TouchableOpacity } from "react-native";
@@ -8,6 +8,7 @@ const ICONS = {
   Home: ListIcon,
   Player: PlayIcon,
   Search: SearchIcon,
+  Settings: CogIcon,
 };
 
 export const BottomTab = ({ navigation, state }) => {
